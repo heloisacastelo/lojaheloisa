@@ -1,0 +1,212 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+    --cor-principal: #FF5678;
+    --cor-escura: #ffbbd3;
+    --cor-fundo: #FF979D;
+    --cor-card: #fefefe;
+    --cor-texto: #1f2937;
+    --cor-perigo: #FFB9DF;
+    --cor-ok: #D40E97;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--cor-fundo);
+    color: var(--cor-texto);
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+/* ---------- Topo e menu ---------- */
+.topo {
+    background: var(--cor-escura);
+    color: #fff;
+    padding: 12px 24px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: bold;
+}
+.logo img { width: 40px; height: 40px; object-fit: contain; }
+
+.menu { display: flex; flex-wrap: wrap; gap: 8px; }
+.menu a {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+}
+.menu a:hover { background: var(--cor-principal); }
+.menu a img { width: 20px; height: 20px; object-fit: contain; }
+
+/* ---------- Conteúdo ---------- */
+.conteudo {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px;
+}
+h1 { margin-bottom: 16px; color: var(--cor-escura); }
+
+.barra {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+/* ---------- Botões ---------- */
+.botao {
+    display: inline-block;
+    background: var(--cor-principal);
+    color: #fff;
+    border: 0;
+    padding: 9px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 15px;
+}
+.botao:hover { background: var(--cor-escura); }
+.botao.perigo { background: var(--cor-perigo); }
+.botao.perigo:hover { background: #991b1b; }
+.botao.cinza { background: #6b7280; }
+.botao.cinza:hover { background: #374151; }
+.botao.pequeno { padding: 5px 10px; font-size: 13px; }
+
+/* ---------- Tabelas ---------- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--cor-card);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .1);
+}
+th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #e5e7eb; }
+th { background: var(--cor-principal); color: #fff; }
+tr:hover td { background: #f9fafb; }
+td.acoes { white-space: nowrap; }
+td img.mini { width: 48px; height: 48px; object-fit: contain; }
+
+/* ---------- Formulários ---------- */
+.formulario {
+    background: var(--cor-card);
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .1);
+    max-width: 560px;
+    display: grid;
+    gap: 14px;
+}
+.campo { display: grid; gap: 4px; }
+.campo label { font-weight: bold; font-size: 14px; }
+.campo input, .campo select, .campo textarea {
+    padding: 9px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 15px;
+    font-family: inherit;
+}
+.campo input:focus, .campo select:focus, .campo textarea:focus {
+    outline: 2px solid var(--cor-principal);
+}
+.botoes { display: flex; gap: 8px; }
+
+/* ---------- Mensagens ---------- */
+.aviso {
+    padding: 12px 16px;
+    border-radius: 6px;
+    margin-bottom: 16px;
+    background: #fef3c7;
+    border: 1px solid #f59e0b;
+}
+.aviso.ok { background: #dcfce7; border-color: var(--cor-ok); }
+.aviso.erro { background: #fee2e2; border-color: var(--cor-perigo); }
+.vazio { text-align: center; padding: 24px; color: #6b7280; }
+
+/* ---------- Painel e vitrine (display: grid) ---------- */
+.painel {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 28px;
+}
+.painel a {
+    background: var(--cor-card);
+    padding: 18px;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--cor-texto);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .1);
+}
+.painel a:hover { box-shadow: 0 3px 10px rgba(0, 0, 0, .2); }
+.painel img { width: 48px; height: 48px; object-fit: contain; }
+.painel strong { display: block; font-size: 28px; color: var(--cor-principal); }
+
+.vitrine {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 18px;
+}
+.card {
+    background: var(--cor-card);
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .1);
+    display: grid;
+    gap: 8px;
+    align-content: start;
+}
+.card img { width: 100%; height: 140px; object-fit: contain; }
+.card h3 { font-size: 17px; }
+.card p { font-size: 14px; color: #6b7280; }
+.card .preco { font-size: 20px; font-weight: bold; color: var(--cor-ok); }
+
+/* ---------- Rodapé ---------- */
+.rodape {
+    background: var(--cor-escura);
+    color: #fff;
+    text-align: center;
+    padding: 14px;
+    font-size: 14px;
+}
+
+/* ---------- Página de relatórios (JOINs) ---------- */
+.exemplo {
+    background: var(--cor-card);
+    padding: 18px;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .1);
+    margin-bottom: 20px;
+    display: grid;
+    gap: 10px;
+}
+.exemplo h2 { color: var(--cor-escura); }
+.exemplo pre {
+    background: #111827;
+    color: #e5e7eb;
+    padding: 12px;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-size: 14px;
+}
